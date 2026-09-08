@@ -1,0 +1,145 @@
+:root {
+--sja-blue: #3b87fa;
+--sja-background: #f0f7fc;
+}
+
+body {
+font-family: "Inter", sans-serif;
+background-color: var(--sja-background);
+color: #212529;
+}
+
+.lesson-container {
+max-width: 900px;
+}
+
+.lesson-header {
+padding: 2rem 1rem 1rem;
+}
+
+.lesson-title {
+font-weight: 700;
+}
+
+.lesson-intro {
+max-width: 700px;
+margin: 0 auto;
+color: #5c6770;
+}
+
+.video-card {
+background: #ffffff;
+border-radius: 16px;
+box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+overflow: hidden;
+}
+
+.video-wrapper {
+width: 100%;
+background: #000;
+}
+
+video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: contain;
+  background-color: #000;
+}
+
+.video-content {
+padding: 1.25rem;
+}
+
+.wind-label {
+color: var(--sja-blue);
+font-size: 0.85rem;
+font-weight: 700;
+letter-spacing: 0.08em;
+text-transform: uppercase;
+}
+
+.video-title {
+font-size: 1.35rem;
+font-weight: 700;
+margin-top: 0.35rem;
+}
+
+.progress-text {
+font-size: 0.9rem;
+font-weight: 600;
+color: #6c757d;
+}
+
+.lesson-navigation {
+padding: 1rem 1.25rem 1.5rem;
+}
+
+.btn-sja {
+background-color: var(--sja-blue);
+border-color: var(--sja-blue);
+color: #fff;
+font-weight: 600;
+border-radius: 8px;
+padding: 0.65rem 1.25rem;
+}
+
+.btn-sja:hover,
+.btn-sja:focus {
+background-color: #2f76e5;
+border-color: #2f76e5;
+color: #fff;
+}
+
+.btn-outline-sja {
+border: 1px solid var(--sja-blue);
+color: var(--sja-blue);
+background: #fff;
+font-weight: 600;
+border-radius: 8px;
+padding: 0.65rem 1.25rem;
+}
+
+.btn-outline-sja:hover,
+.btn-outline-sja:focus {
+background-color: var(--sja-blue);
+border-color: var(--sja-blue);
+color: #fff;
+}
+
+.completion-message {
+display: none;
+padding: 3rem 1.5rem;
+text-align: center;
+}
+
+.completion-message i {
+font-size: 3rem;
+color: var(--sja-blue);
+}
+
+@media (max-width: 576px) {
+
+.lesson-header {
+padding-top: 1.5rem;
+}
+
+.video-content {
+padding: 1rem;
+}
+
+.video-title {
+font-size: 1.15rem;
+}
+
+.lesson-navigation {
+padding: 0.75rem 1rem 1rem;
+}
+
+.btn-sja,
+.btn-outline-sja {
+padding: 0.55rem 1rem;
+}
+
+}

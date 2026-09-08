@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Launching &amp; Landing | San Juan Academy</title>
+
+  <!-- Bootstrap -->
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <!-- Inter Font -->
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Page Style -->
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <main class="container lesson-container">
+
+<!-- ======================================================
+     LESSON HEADER
+     ====================================================== -->
+
+<header class="lesson-header text-center">
+
+  <h1 class="lesson-title">
+    Launching &amp; Landing
+  </h1>
+
+  <p class="lesson-intro mb-0">
+    Learn how to safely launch and land a dinghy in
+    <strong>onshore, offshore, and cross-shore winds.</strong>
+  </p>
+
+</header>
+
+
+<!-- ======================================================
+     VIDEO LESSON
+     ====================================================== -->
+
+<section class="video-card">
+
+  <!-- Video -->
+  <div class="video-wrapper">
+
+    <video
+      id="lessonVideo"
+      controls
+      playsinline
+      preload="none"
+    >
+      <source id="videoSource" type="video/mp4">
+
+      Your browser does not support HTML5 video.
+
+    </video>
+
+  </div>
+
+
+  <!-- Video Information -->
+  <div class="video-content">
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+
+      <span id="windLabel" class="wind-label">
+        Onshore Wind
+      </span>
+
+      <span id="progressText" class="progress-text">
+        1 / 6
+      </span>
+
+    </div>
+
+    <h2 id="videoTitle" class="video-title mb-0">
+      Launching in an Onshore Wind
+    </h2>
+
+  </div>
+
+
+  <!-- Navigation -->
+  <div class="lesson-navigation">
+
+    <div class="d-flex justify-content-between align-items-center gap-2">
+
+      <button
+        id="previousButton"
+        type="button"
+        class="btn btn-outline-sja"
+        disabled
+      >
+        <i class="bi bi-arrow-left"></i>
+        <span class="d-none d-sm-inline">Back</span>
+      </button>
+
+
+      <button
+        id="nextButton"
+        type="button"
+        class="btn btn-sja"
+      >
+        <span class="d-none d-sm-inline">Next</span>
+        <i class="bi bi-arrow-right"></i>
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- Completion Message -->
+  <div id="completionMessage" class="completion-message">
+
+    <i class="bi bi-check-circle"></i>
+
+    <h2 class="mt-3 fw-bold">
+      Lesson Complete
+    </h2>
+
+    <p class="text-muted mb-0">
+      You have completed the Launching &amp; Landing lesson.
+    </p>
+
+  </div>
+
+</section>
+
+
+  </main>
+
+  <!-- Bootstrap JS -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+  <script>
+
+    /*
+     * ==========================================================
+     * LAUNCHING & LANDING
+     * ==========================================================
+     *
+     * Six videos.
+     *
+     * Only the video currently being viewed is loaded.
+     *
+     * All video files are assumed to be in the same folder
+     * as this index.html file.
+     *
+     * Replace the filenames below with your actual filenames.
+     */
+
+    const lessons = [
+
+      {
+        wind: "Onshore Wind",
+        title: "Launching in an Onshore Wind",
+        video: "launch-onshore.mp4"
+      },
+
+      {
+        wind: "Onshore Wind",
+        title: "Landing in an Onshore Wind",
+        video: "land-onshore.mp4"
+      },
+
+      {
+        wind: "Offshore Wind",
+        title: "Launching in an Offshore Wind",
+        video: "launch-offshore.mp4"
+      },
+
+      {
+        wind: "Offshore Wind",
+        title: "Landing in an Offshore Wind",
+        video: "land-offshore.mp4"
+      },
+
+      {
+        wind: "Cross-shore Wind",
+        title: "Launching in a Cross-shore Wind",
+        video: "launch-cross-shore.mp4"
+      },
+
+      {
+        wind: "Cross-shore Wind",
+        title: "Landing in a Cross-shore Wind",
+        video: "land-cross-shore.mp4"
+      }
+
+    ];
+
+
+    let currentVideo = 0;
+
+
+    // ----------------------------------------------------------
+    // Elements
+    // ----------------------------------------------------------
+
+    const lessonVideo =
+      document.getElementById("lessonVideo");
+
+    const videoSource =
+      document.getElementById("videoSource");
+
+    const windLabel =
+      document.getElementById("windLabel");
+
+    const videoTitle =
+      document.getElementById("videoTitle");
+
+    const progressText =
+      document.getElementById("progressText");
+
+    const previousButton =
+      document.getElementById("previousButton");
+
+    const nextButton =
+      document.getElementById("nextButton");
+
+    const completionMessage =
+      document.getElementById("completionMessage");
+
+    const videoContent =
+      document.querySelector(".video-content");
+
+    const lessonNavigation =
+      document.querySelector(".lesson-navigation");
+
+
+    // ----------------------------------------------------------
+    // Load a video
+    // ----------------------------------------------------------
+
+    function loadVideo(index) {
+
+      const lesson = lessons[index];
+
+      /*
+       * Stop the current video.
+       */
+      lessonVideo.pause();
+
+      /*
+       * Remove the old source.
+       *
+       * This allows the browser to release the previous
+       * video resource instead of keeping all six videos
+       * loaded in memory.
+       */
+      videoSource.removeAttribute("src");
+
+      lessonVideo.load();
+
+      /*
+       * Set ONLY the requested video's source.
+       */
+      videoSource.src = lesson.video;
+
+      /*
+       * Ask the browser to load this video.
+       */
+      lessonVideo.load();
+
+
+      // Update the lesson information.
+
+      windLabel.textContent =
+        lesson.wind;
+
+      videoTitle.textContent =
+        lesson.title;
+
+      progressText.textContent =
+        `${index + 1} / ${lessons.length}`;
+
+
+      // Update Back button.
+
+      previousButton.disabled =
+        index === 0;
+
+
+      // Update Next button.
+
+      if (index === lessons.length - 1) {
+
+        nextButton.innerHTML =
+          'Finish <i class="bi bi-check-lg"></i>';
+
+      } else {
+
+        nextButton.innerHTML =
+          '<span class="d-none d-sm-inline">Next</span> ' +
+          '<i class="bi bi-arrow-right"></i>';
+
+      }
+
+    }
+
+
+    // ----------------------------------------------------------
+    // First video
+    // ----------------------------------------------------------
+
+    /*
+     * We load the first video when the page is ready.
+     *
+     * preload="none" means the browser is instructed not to
+     * download the video until it is actually needed.
+     */
+
+    loadVideo(currentVideo);
+
+
+    // ----------------------------------------------------------
+    // NEXT
+    // ----------------------------------------------------------
+
+    nextButton.addEventListener("click", () => {
+
+      if (currentVideo < lessons.length - 1) {
+
+        currentVideo++;
+
+        loadVideo(currentVideo);
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      } else {
+
+        /*
+         * The student has reached the end of all six videos.
+         */
+
+        lessonVideo.pause();
+
+        lessonVideo.style.display = "none";
+
+        videoContent.style.display = "none";
+
+        lessonNavigation.style.display = "none";
+
+        completionMessage.style.display = "block";
+
+      }
+
+    });
+
+
+    // ----------------------------------------------------------
+    // BACK
+    // ----------------------------------------------------------
+
+    previousButton.addEventListener("click", () => {
+
+      if (currentVideo > 0) {
+
+        currentVideo--;
+
+        /*
+         * Restore the lesson if the student goes backward
+         * after reaching the final screen.
+         */
+
+        lessonVideo.style.display = "block";
+
+        videoContent.style.display = "block";
+
+        lessonNavigation.style.display = "block";
+
+        completionMessage.style.display = "none";
+
+        loadVideo(currentVideo);
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
