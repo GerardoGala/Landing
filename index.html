@@ -1,414 +1,248 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Launching & Landing | San Juan Academy</title>
 
-  <title>Launching &amp; Landing | San Juan Academy</title>
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap -->
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap Icons -->
+<!-- Shared CSS -->
+<link rel="stylesheet" href="https://gerardogala.github.io/Tutorial-Shared/shared.css">
 
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  >
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
 
-  <!-- Inter Font -->
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
-
-  <!-- Page Style -->
-
-  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <main class="container lesson-container">
-
-<!-- ======================================================
-     LESSON HEADER
-     ====================================================== -->
-
-<header class="lesson-header text-center">
-
-  <h1 class="lesson-title">
-    Launching &amp; Landing
-  </h1>
-
-  <p class="lesson-intro mb-0">
-    Learn how to safely launch and land a dinghy in
-    <strong>onshore, offshore, and cross-shore winds.</strong>
-  </p>
-
-</header>
+  <!-- Header will be injected here -->
+  <div id="header-placeholder"></div>
 
 
-<!-- ======================================================
-     VIDEO LESSON
-     ====================================================== -->
+  <!-- Hero -->
+  <header class="container text-center py-1">
 
-<section class="video-card">
+    <h1 class="display-5 fw-bold">
+        Launching & Landing
+    </h1>
 
-  <!-- Video -->
-  <div class="video-wrapper">
-
-    <video
-      id="lessonVideo"
-      controls
-      playsinline
-      preload="none"
-    >
-      <source id="videoSource" type="video/mp4">
-
-      Your browser does not support HTML5 video.
-
-    </video>
-
-  </div>
-
-
-  <!-- Video Information -->
-  <div class="video-content">
-
-    <div class="d-flex justify-content-between align-items-center mb-2">
-
-      <span id="windLabel" class="wind-label">
-        Onshore Wind
-      </span>
-
-      <span id="progressText" class="progress-text">
-        1 / 6
-      </span>
-
-    </div>
-
-    <h2 id="videoTitle" class="video-title mb-0">
-      Launching in an Onshore Wind
-    </h2>
-
-  </div>
-
-
-  <!-- Navigation -->
-  <div class="lesson-navigation">
-
-    <div class="d-flex justify-content-between align-items-center gap-2">
-
-      <button
-        id="previousButton"
-        type="button"
-        class="btn btn-outline-sja"
-        disabled
-      >
-        <i class="bi bi-arrow-left"></i>
-        <span class="d-none d-sm-inline">Back</span>
-      </button>
-
-
-      <button
-        id="nextButton"
-        type="button"
-        class="btn btn-sja"
-      >
-        <span class="d-none d-sm-inline">Next</span>
-        <i class="bi bi-arrow-right"></i>
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- Completion Message -->
-  <div id="completionMessage" class="completion-message">
-
-    <i class="bi bi-check-circle"></i>
-
-    <h2 class="mt-3 fw-bold">
-      Lesson Complete
-    </h2>
-
-    <p class="text-muted mb-0">
-      You have completed the Launching &amp; Landing lesson.
+    <p class="lead mt-1">
+        You are more likely to hurt yourself or damage your dinghy
+        while launching and landing than while sailing.
     </p>
 
-  </div>
+    <p class="lead mt-1">
+        Launching and landing are not simply getting the boat into and
+        out of the water. They are sailing skills in their own right.
+    </p>
 
-</section>
+  </header>
 
 
-  </main>
+  <!-- Introduction -->
+  <section class="container py-1">
 
-  <!-- Bootstrap JS -->
+    <div class="row justify-content-center">
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
-  </script>
+        <div class="col-lg-8 text-center">
 
-  <script>
+            <p class="mt-1">
+                When you are sailing, you usually have open water around you.
+                When launching or landing, you are dealing with wind, waves,
+                shallow water, surf, sand, and a boat that can suddenly become
+                difficult to control.
+            </p>
 
-    /*
-     * ==========================================================
-     * LAUNCHING & LANDING
-     * ==========================================================
-     *
-     * Six videos.
-     *
-     * Only the video currently being viewed is loaded.
-     *
-     * All video files are assumed to be in the same folder
-     * as this index.html file.
-     *
-     * Replace the filenames below with your actual filenames.
-     */
+            <p>
+                A wave can move the boat independently of the sailor.
+                A gust can move the sail and boom unexpectedly.
+                A rudder or daggerboard can strike the bottom.
+                A boat that was under control a moment ago can suddenly be
+                pushed toward the sailor or toward the beach.
+            </p>
 
-    const lessons = [
+            <p>
+                <strong>
+                    The first and last few minutes of your sailing day
+                    deserve just as much attention as the time you spend
+                    sailing.
+                </strong>
+            </p>
 
-      {
-        wind: "Onshore Wind",
-        title: "Launching in an Onshore Wind",
-        video: "launch-onshore.mp4"
-      },
+        </div>
 
-      {
-        wind: "Onshore Wind",
-        title: "Landing in an Onshore Wind",
-        video: "land-onshore.mp4"
-      },
+    </div>
 
-      {
-        wind: "Offshore Wind",
-        title: "Launching in an Offshore Wind",
-        video: "launch-offshore.mp4"
-      },
+  </section>
 
-      {
-        wind: "Offshore Wind",
-        title: "Landing in an Offshore Wind",
-        video: "land-offshore.mp4"
-      },
 
-      {
-        wind: "Cross-shore Wind",
-        title: "Launching in a Cross-shore Wind",
-        video: "launch-cross-shore.mp4"
-      },
+  <!-- Learn / Practice / Challenge -->
+  <section class="container py-1">
 
-      {
-        wind: "Cross-shore Wind",
-        title: "Landing in a Cross-shore Wind",
-        video: "land-cross-shore.mp4"
-      }
+    <div class="row g-4">
 
-    ];
 
+        <!-- Learn -->
+        <div class="col-md-4">
 
-    let currentVideo = 0;
+            <div class="card h-100 text-center shadow-sm">
 
+                <div class="card-body p-4">
 
-    // ----------------------------------------------------------
-    // Elements
-    // ----------------------------------------------------------
+                    <i class="bi bi-book display-5"></i>
 
-    const lessonVideo =
-      document.getElementById("lessonVideo");
+                    <h3 class="h4 mt-3">
+                        1. Learn
+                    </h3>
 
-    const videoSource =
-      document.getElementById("videoSource");
+                    <p>
+                        Learn how wind direction, wave direction, beach
+                        conditions, and boat position affect launching
+                        and landing.
+                    </p>
 
-    const windLabel =
-      document.getElementById("windLabel");
+                    <p>
+                        See why your position relative to the boat,
+                        sail, boom, waves, and beach matters.
+                    </p>
 
-    const videoTitle =
-      document.getElementById("videoTitle");
+                    <a href="learn.html"
+                       class="btn btn-outline-primary">
+                        Learn
+                    </a>
 
-    const progressText =
-      document.getElementById("progressText");
+                </div>
 
-    const previousButton =
-      document.getElementById("previousButton");
+            </div>
 
-    const nextButton =
-      document.getElementById("nextButton");
+        </div>
 
-    const completionMessage =
-      document.getElementById("completionMessage");
 
-    const videoContent =
-      document.querySelector(".video-content");
+        <!-- Practice -->
+        <div class="col-md-4">
 
-    const lessonNavigation =
-      document.querySelector(".lesson-navigation");
+            <div class="card h-100 text-center shadow-sm">
 
+                <div class="card-body p-4">
 
-    // ----------------------------------------------------------
-    // Load a video
-    // ----------------------------------------------------------
+                    <i class="bi bi-arrow-repeat display-5"></i>
 
-    function loadVideo(index) {
+                    <h3 class="h4 mt-3">
+                        2. Practice
+                    </h3>
 
-      const lesson = lessons[index];
+                    <p>
+                        Practice recognizing wind and wave conditions
+                        and choosing the safest way to approach,
+                        launch, or land.
+                    </p>
 
-      /*
-       * Stop the current video.
-       */
-      lessonVideo.pause();
+                    <p>
+                        Learn to anticipate how the boat will move
+                        before you put yourself in its path.
+                    </p>
 
-      /*
-       * Remove the old source.
-       *
-       * This allows the browser to release the previous
-       * video resource instead of keeping all six videos
-       * loaded in memory.
-       */
-      videoSource.removeAttribute("src");
+                    <a href="practice.html"
+                       class="btn btn-outline-primary">
+                        Practice
+                    </a>
 
-      lessonVideo.load();
+                </div>
 
-      /*
-       * Set ONLY the requested video's source.
-       */
-      videoSource.src = lesson.video;
+            </div>
 
-      /*
-       * Ask the browser to load this video.
-       */
-      lessonVideo.load();
+        </div>
 
 
-      // Update the lesson information.
+        <!-- Challenge -->
+        <div class="col-md-4">
 
-      windLabel.textContent =
-        lesson.wind;
+            <div class="card h-100 text-center shadow-sm">
 
-      videoTitle.textContent =
-        lesson.title;
+                <div class="card-body p-4">
 
-      progressText.textContent =
-        `${index + 1} / ${lessons.length}`;
+                    <i class="bi bi-trophy display-5"></i>
 
+                    <h3 class="h4 mt-3">
+                        3. Challenge
+                    </h3>
 
-      // Update Back button.
+                    <p>
+                        Decide how you would launch or land without
+                        step-by-step assistance.
+                    </p>
 
-      previousButton.disabled =
-        index === 0;
+                    <p>
+                        Use the wind, waves, boat position, and beach
+                        conditions to make your decisions.
+                    </p>
 
+                    <a href="challenge.html"
+                       class="btn btn-outline-primary">
+                        Take the Challenge
+                    </a>
 
-      // Update Next button.
+                </div>
 
-      if (index === lessons.length - 1) {
+            </div>
 
-        nextButton.innerHTML =
-          'Finish <i class="bi bi-check-lg"></i>';
+        </div>
 
-      } else {
+    </div>
 
-        nextButton.innerHTML =
-          '<span class="d-none d-sm-inline">Next</span> ' +
-          '<i class="bi bi-arrow-right"></i>';
+  </section>
 
-      }
 
-    }
+  <!-- The Big Idea -->
+  <section class="container py-1">
 
+    <div class="row justify-content-center">
 
-    // ----------------------------------------------------------
-    // First video
-    // ----------------------------------------------------------
+        <div class="col-lg-8">
 
-    /*
-     * We load the first video when the page is ready.
-     *
-     * preload="none" means the browser is instructed not to
-     * download the video until it is actually needed.
-     */
+            <div class="alert alert-info text-center p-4">
 
-    loadVideo(currentVideo);
+                <h2 class="h4">
+                    The Big Idea
+                </h2>
 
+                <p class="mb-0">
+                    Don't just ask,
+                    <strong>"How do I get the boat into the water?"</strong>
+                    or
+                    <strong>"How do I get it back onto the beach?"</strong>
+                    Ask,
+                    <strong>"Where will the boat move next?"</strong>
+                    Then put yourself somewhere the boat cannot hurt you.
+                </p>
 
-    // ----------------------------------------------------------
-    // NEXT
-    // ----------------------------------------------------------
+            </div>
 
-    nextButton.addEventListener("click", () => {
+        </div>
 
-      if (currentVideo < lessons.length - 1) {
+    </div>
 
-        currentVideo++;
+  </section>
 
-        loadVideo(currentVideo);
 
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
+  <!-- Footer -->
+  <div id="footer-placeholder"></div>
 
-      } else {
 
-        /*
-         * The student has reached the end of all six videos.
-         */
+  <script src="js/layout.js"></script>
 
-        lessonVideo.pause();
-
-        lessonVideo.style.display = "none";
-
-        videoContent.style.display = "none";
-
-        lessonNavigation.style.display = "none";
-
-        completionMessage.style.display = "block";
-
-      }
-
-    });
-
-
-    // ----------------------------------------------------------
-    // BACK
-    // ----------------------------------------------------------
-
-    previousButton.addEventListener("click", () => {
-
-      if (currentVideo > 0) {
-
-        currentVideo--;
-
-        /*
-         * Restore the lesson if the student goes backward
-         * after reaching the final screen.
-         */
-
-        lessonVideo.style.display = "block";
-
-        videoContent.style.display = "block";
-
-        lessonNavigation.style.display = "block";
-
-        completionMessage.style.display = "none";
-
-        loadVideo(currentVideo);
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-
-      }
-
-    });
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
   </script>
 
 </body>
