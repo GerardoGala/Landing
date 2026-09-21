@@ -1,0 +1,360 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 800 500"
+    width="100%">
+
+    <!-- =====================================================
+         ONSHORE WIND
+
+         SIDE VIEW — STARBOARD SIDE OF ILCA
+
+         UNIVERSAL RULE:
+
+         WIND  →  SAILOR  →  ILCA  →  BEACH
+
+         The sailor is in the water, outside the boat,
+         between the incoming wind and the ILCA.
+
+         The sailor is holding the ILCA's stern.
+    ====================================================== -->
+
+
+    <!-- =====================================================
+         WATER
+    ====================================================== -->
+
+    <rect
+        x="0"
+        y="0"
+        width="800"
+        height="360"
+        fill="#dff3ff" />
+
+
+    <!-- =====================================================
+         BEACH
+         On the right because this is ONshore wind.
+    ====================================================== -->
+
+    <path
+        id="beach"
+        d="
+            M650 0
+            L800 0
+            L800 500
+            L650 500
+            Q625 430 650 360
+            Q675 300 650 240
+            Q625 170 650 100
+            Z
+        "
+        fill="#f4ead7" />
+
+    <text
+        x="720"
+        y="70"
+        text-anchor="middle"
+        font-size="22"
+        font-weight="700"
+        fill="#795548">
+        BEACH
+    </text>
+
+
+    <!-- =====================================================
+         WIND
+
+         Wind comes from LEFT toward RIGHT.
+    ====================================================== -->
+
+    <g id="wind">
+
+        <text
+            x="100"
+            y="55"
+            text-anchor="middle"
+            font-size="22"
+            font-weight="700"
+            fill="#0d6efd">
+            WIND
+        </text>
+
+        <line
+            x1="35"
+            y1="100"
+            x2="170"
+            y2="100"
+            stroke="#0d6efd"
+            stroke-width="7"
+            stroke-linecap="round" />
+
+        <polygon
+            points="165,82 195,100 165,118"
+            fill="#0d6efd" />
+
+
+        <line
+            x1="35"
+            y1="150"
+            x2="170"
+            y2="150"
+            stroke="#0d6efd"
+            stroke-width="7"
+            stroke-linecap="round" />
+
+        <polygon
+            points="165,132 195,150 165,168"
+            fill="#0d6efd" />
+
+    </g>
+
+
+    <!-- =====================================================
+         SAILOR
+
+         The sailor is IN THE WATER.
+
+         The sailor is BETWEEN:
+             WIND  →  SAILOR  →  ILCA
+
+         The sailor is holding the stern.
+    ====================================================== -->
+
+    <g id="sailor">
+
+        <!-- Head -->
+
+        <circle
+            cx="260"
+            cy="265"
+            r="17"
+            fill="#333" />
+
+
+        <!-- Body -->
+
+        <line
+            x1="260"
+            y1="282"
+            x2="260"
+            y2="335"
+            stroke="#333"
+            stroke-width="10"
+            stroke-linecap="round" />
+
+
+        <!-- Left arm -->
+
+        <line
+            x1="260"
+            y1="295"
+            x2="225"
+            y2="315"
+            stroke="#333"
+            stroke-width="8"
+            stroke-linecap="round" />
+
+
+        <!-- Right arm reaching for stern -->
+
+        <line
+            x1="260"
+            y1="295"
+            x2="315"
+            y2="305"
+            stroke="#333"
+            stroke-width="8"
+            stroke-linecap="round" />
+
+
+        <!-- Left leg -->
+
+        <line
+            x1="260"
+            y1="335"
+            x2="235"
+            y2="365"
+            stroke="#333"
+            stroke-width="9"
+            stroke-linecap="round" />
+
+
+        <!-- Right leg -->
+
+        <line
+            x1="260"
+            y1="335"
+            x2="285"
+            y2="365"
+            stroke="#333"
+            stroke-width="9"
+            stroke-linecap="round" />
+
+
+        <!-- Hand holding stern -->
+
+        <circle
+            cx="315"
+            cy="305"
+            r="6"
+            fill="#333" />
+
+    </g>
+
+
+    <!-- =====================================================
+         ILCA
+
+         STARBOARD SIDE VIEW
+
+         Stern is on the LEFT.
+         Bow points toward the BEACH on the RIGHT.
+    ====================================================== -->
+
+    <g id="ilca">
+
+
+        <!-- Hull -->
+
+        <path
+            id="boatHull"
+            d="
+                M315 310
+                Q350 290 410 295
+                L575 295
+                Q625 295 650 315
+                Q625 345 575 350
+                L410 350
+                Q350 350 315 330
+                Z
+            "
+            fill="#ffffff"
+            stroke="#222"
+            stroke-width="4" />
+
+
+        <!-- Bow -->
+
+        <path
+            d="
+                M625 300
+                Q665 315 625 345
+            "
+            fill="none"
+            stroke="#222"
+            stroke-width="4" />
+
+
+        <!-- Mast -->
+
+        <line
+            x1="430"
+            y1="300"
+            x2="430"
+            y2="90"
+            stroke="#555"
+            stroke-width="6" />
+
+
+        <!-- Sail -->
+
+        <path
+            id="sail"
+            d="
+                M430 95
+                L430 295
+                L590 295
+                Z
+            "
+            fill="#ffffff"
+            stroke="#222"
+            stroke-width="3" />
+
+
+        <!-- Boom -->
+
+        <line
+            id="boom"
+            x1="430"
+            y1="185"
+            x2="565"
+            y2="275"
+            stroke="#555"
+            stroke-width="8"
+            stroke-linecap="round" />
+
+
+        <!-- Stern -->
+
+        <line
+            x1="315"
+            y1="310"
+            x2="315"
+            y2="330"
+            stroke="#222"
+            stroke-width="5"
+            stroke-linecap="round" />
+
+    </g>
+
+
+    <!-- =====================================================
+         WATER LINE / WAVES
+    ====================================================== -->
+
+    <g id="waves">
+
+        <path
+            d="
+                M0 390
+                Q50 375 100 390
+                T200 390
+                T300 390
+                T400 390
+                T500 390
+                T600 390
+                T700 390
+                T800 390
+            "
+            fill="none"
+            stroke="#6bb7d6"
+            stroke-width="3" />
+
+        <path
+            d="
+                M0 450
+                Q50 435 100 450
+                T200 450
+                T300 450
+                T400 450
+                T500 450
+                T600 450
+                T700 450
+                T800 450
+            "
+            fill="none"
+            stroke="#6bb7d6"
+            stroke-width="3" />
+
+    </g>
+
+
+    <!-- =====================================================
+         UNIVERSAL RULE LABEL
+
+         Reinforces the teaching point directly in the SVG.
+    ====================================================== -->
+
+    <text
+        x="400"
+        y="480"
+        text-anchor="middle"
+        font-size="20"
+        font-weight="700"
+        fill="#333">
+
+        WIND → SAILOR → ILCA → BEACH
+
+    </text>
+
+</svg>

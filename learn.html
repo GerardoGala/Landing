@@ -1,365 +1,237 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Launching & Landing | San Juan Academy</title>
+    <meta charset="UTF-8">
 
-  <!-- Bootstrap -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
-    rel="stylesheet">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1">
 
-  <!-- Bootstrap Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <title>Launching & Landing | San Juan Academy</title>
 
-  <!-- Shared CSS -->
-  <link
-    rel="stylesheet"
-    href="https://gerardogala.github.io/Tutorial-Shared/shared.css">
 
-  <!-- Landing CSS -->
-  <link rel="stylesheet" href="css/style.css">
+    <!-- Bootstrap -->
 
-  <link
-    rel="apple-touch-icon"
-    sizes="180x180"
-    href="favicon/apple-touch-icon.png">
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="32x32"
-    href="favicon/favicon-32x32.png">
 
-  <link
-    rel="icon"
-    type="image/png"
-    sizes="16x16"
-    href="favicon/favicon-16x16.png">
+    <!-- Bootstrap Icons -->
 
-  <link
-    rel="manifest"
-    href="favicon/site.webmanifest">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
+    <!-- Shared CSS -->
+
+    <link
+        rel="stylesheet"
+        href="https://gerardogala.github.io/Tutorial-Shared/shared.css">
+
+
+    <!-- Landing CSS -->
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+
+    <!-- Favicon -->
+
+    <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="favicon/apple-touch-icon.png">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="favicon/favicon-32x32.png">
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="favicon/favicon-16x16.png">
+
+    <link
+        rel="manifest"
+        href="favicon/site.webmanifest">
 
 </head>
 
+
 <body>
 
-  <!-- Header will be injected here -->
-  <div id="header-placeholder"></div>
-
-
-  <!-- =========================================================
-       LEARN
-  ========================================================== -->
-
-  <main class="container text-center py-2">
-
-    <!-- Scenario Title -->
-    <h1 id="scenarioTitle" class="h3 fw-bold mb-2">
-      Onshore Wind / Calm Water
-    </h1>
-
-    <!-- Scenario Counter -->
-    <p id="scenarioCounter" class="text-muted mb-3">
-      Scenario 1 of 7
-    </p>
-
-
-    <!-- =======================================================
-         SVG SCENARIO
-    ======================================================== -->
-
-    <div
-      id="scenarioContainer"
-      class="mx-auto"
-      style="max-width: 600px;">
-
-      <!--
-        The SVG is created and controlled by learn.js.
-
-        The instructor's viewpoint is used:
-
-        BEACH / INSTRUCTOR
-        -----------------
-              WIND
-                ↓
-              SAILOR
-               ILCA
-        -----------------
-                WATER
-      -->
-
-      <svg
-        id="scenarioSvg"
-        viewBox="0 0 600 700"
-        width="100%"
-        role="img"
-        aria-label="Launching and landing scenario">
-
-        <!-- Water -->
-        <g id="water">
-          <rect
-            x="0"
-            y="500"
-            width="600"
-            height="200"
-            fill="#dff3ff">
-          </rect>
-
-          <path
-            id="waterWave1"
-            d="M0 525 Q50 510 100 525 T200 525 T300 525 T400 525 T500 525 T600 525"
-            fill="none"
-            stroke="#6bb7d6"
-            stroke-width="3">
-          </path>
-
-          <path
-            id="waterWave2"
-            d="M0 565 Q50 550 100 565 T200 565 T300 565 T400 565 T500 565 T600 565"
-            fill="none"
-            stroke="#6bb7d6"
-            stroke-width="3">
-          </path>
-        </g>
-
-
-        <!-- Wind -->
-        <g id="wind">
-
-          <line
-            id="windArrow"
-            x1="300"
-            y1="80"
-            x2="300"
-            y2="180"
-            stroke="#0d6efd"
-            stroke-width="6"
-            stroke-linecap="round">
-          </line>
-
-          <polygon
-            id="windArrowHead"
-            points="285,165 315,165 300,190"
-            fill="#0d6efd">
-          </polygon>
-
-        </g>
-
-
-        <!-- Sailor -->
-        <g id="sailor">
-
-          <circle
-            cx="300"
-            cy="300"
-            r="18"
-            fill="#333">
-          </circle>
-
-          <line
-            x1="300"
-            y1="318"
-            x2="300"
-            y2="370"
-            stroke="#333"
-            stroke-width="10"
-            stroke-linecap="round">
-          </line>
-
-          <line
-            x1="300"
-            y1="335"
-            x2="275"
-            y2="360"
-            stroke="#333"
-            stroke-width="8"
-            stroke-linecap="round">
-          </line>
-
-          <line
-            x1="300"
-            y1="335"
-            x2="325"
-            y2="360"
-            stroke="#333"
-            stroke-width="8"
-            stroke-linecap="round">
-          </line>
-
-          <line
-            x1="300"
-            y1="370"
-            x2="280"
-            y2="405"
-            stroke="#333"
-            stroke-width="8"
-            stroke-linecap="round">
-          </line>
-
-          <line
-            x1="300"
-            y1="370"
-            x2="320"
-            y2="405"
-            stroke="#333"
-            stroke-width="8"
-            stroke-linecap="round">
-          </line>
-
-        </g>
-
-
-        <!-- ILCA -->
-        <g id="ilca">
-
-          <!-- Hull -->
-          <path
-            id="boatHull"
-            d="M240 430 Q300 410 360 430 Q345 465 300 475 Q255 465 240 430 Z"
-            fill="#ffffff"
-            stroke="#222"
-            stroke-width="4">
-          </path>
-
-
-          <!-- Mast -->
-          <line
-            x1="300"
-            y1="430"
-            x2="300"
-            y2="225"
-            stroke="#555"
-            stroke-width="5">
-          </line>
-
-
-          <!-- Sail -->
-          <path
-            id="sail"
-            d="M300 230 L300 420 L220 420 Z"
-            fill="#f8f8f8"
-            stroke="#222"
-            stroke-width="3">
-          </path>
-
-
-          <!-- Boom -->
-          <line
-            id="boom"
-            x1="300"
-            y1="300"
-            x2="220"
-            y2="300"
-            stroke="#555"
-            stroke-width="7"
-            stroke-linecap="round">
-          </line>
-
-        </g>
-
-
-        <!-- Danger Message -->
-        <text
-          id="dangerText"
-          x="300"
-          y="350"
-          text-anchor="middle"
-          font-size="64"
-          font-weight="700"
-          fill="#dc3545"
-          opacity="0">
-          DANGER
-        </text>
-
-      </svg>
-
-    </div>
-
-
-    <!-- =======================================================
-         SCENARIO DESCRIPTION
-    ======================================================== -->
-
-    <section
-      id="scenarioDescription"
-      class="mx-auto mt-3"
-      style="max-width: 600px;">
-
-      <p id="scenarioText" class="lead">
-        Observe the relationship between the wind, sailor,
-        boat, and water.
-      </p>
-
-    </section>
-
-
-    <!-- =======================================================
-         NAVIGATION
-    ======================================================== -->
-
-    <div
-      class="d-flex justify-content-between align-items-center gap-2 mt-3"
-      style="max-width: 600px; margin-left: auto; margin-right: auto;">
-
-      <a
-        href="index.html"
-        id="mainMenuButton"
-        class="btn btn-outline-primary">
-
-        <i class="bi bi-house"></i>
-        Main Menu
-
-      </a>
-
-
-      <button
-        id="previousButton"
-        type="button"
-        class="btn btn-primary">
-
-        <i class="bi bi-arrow-left"></i>
-        Previous
-
-      </button>
-
-
-      <button
-        id="nextButton"
-        type="button"
-        class="btn btn-primary">
-
-        Next
-        <i class="bi bi-arrow-right"></i>
-
-      </button>
-
-    </div>
-
-  </main>
-
-
-  <!-- Footer -->
-  <div id="footer-placeholder"></div>
-
-
-  <!-- Layout Loader -->
-  <script src="js/layout.js"></script>
-
-  <!-- Anime.js -->
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
-
-  <!-- Landing Learn Logic -->
-  <script src="js/learn.js"></script>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <div id="header-placeholder"></div>
+
+
+
+    <!-- =====================================================
+         LEARN
+    ====================================================== -->
+
+    <main class="container text-center py-2">
+
+
+        <!-- Scenario Title -->
+
+        <h1
+            id="scenarioTitle"
+            class="h3 fw-bold mb-1">
+
+            Onshore Wind
+
+        </h1>
+
+
+        <!-- Scenario Counter -->
+
+        <p
+            id="scenarioCounter"
+            class="text-muted mb-3">
+
+            Scenario 1 of 4
+
+        </p>
+
+
+
+        <!-- =================================================
+             SVG CONTENT HOLDER
+
+             learn.js will load the appropriate SVG here.
+        ================================================== -->
+
+        <div
+            id="scenarioContainer"
+            class="mx-auto"
+            style="max-width: 600px;">
+
+        </div>
+
+
+
+        <!-- =================================================
+             SCENARIO DESCRIPTION
+        ================================================== -->
+
+        <section
+            id="scenarioDescription"
+            class="mx-auto mt-3"
+            style="max-width: 600px;">
+
+            <p
+                id="scenarioText"
+                class="lead">
+
+                The wind is blowing toward the beach.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NAVIGATION
+        ================================================== -->
+
+        <div
+            class="d-flex justify-content-between align-items-center gap-2 mt-3"
+            style="max-width: 600px; margin-left:auto; margin-right:auto;">
+
+
+            <!-- Main Menu -->
+
+            <a
+                href="index.html"
+                class="btn btn-outline-primary">
+
+                <i class="bi bi-house"></i>
+
+                Main Menu
+
+            </a>
+
+
+            <!-- Previous -->
+
+            <button
+                id="previousButton"
+                type="button"
+                class="btn btn-primary">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Previous
+
+            </button>
+
+
+            <!-- Next -->
+
+            <button
+                id="nextButton"
+                type="button"
+                class="btn btn-primary">
+
+                Next
+
+                <i class="bi bi-arrow-right"></i>
+
+            </button>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <div id="footer-placeholder"></div>
+
+
+
+    <!-- =====================================================
+         SHARED LAYOUT
+    ====================================================== -->
+
+    <script src="js/layout.js"></script>
+
+
+
+    <!-- =====================================================
+         ANIME.JS
+    ====================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js">
+    </script>
+
+
+
+    <!-- =====================================================
+         LEARN LOGIC
+    ====================================================== -->
+
+    <script src="js/learn.js"></script>
+
 
 </body>
 
 </html>
-```
