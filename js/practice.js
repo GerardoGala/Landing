@@ -4,21 +4,21 @@ const scenarioTimeline = [
         title: "Offshore Launch",
         text: "The wind is blowing from land out to sea. Arrange the components from <strong>Left to Right</strong> so that you are holding the boat safely from its upwind side.",
         layout: "horizontal",
-        windLabel: "💨 Wind (◀ Left)",
+        windLabel: "Wind◀",
         correctOrder: ['ilca', 'sailor', 'wind']
     },
     {
         title: "Onshore Launch",
         text: "The wind is blowing directly from the water onto the beach. Arrange the components from <strong>Left to Right</strong> to avoid getting trapped between the hull and dry beach.",
         layout: "horizontal",
-        windLabel: "💨 Wind (▶ Right)",
+        windLabel: "Wind▶",
         correctOrder: ['wind', 'sailor', 'ilca']
     },
     {
         title: "Cross-shore Launch",
         text: "The breeze runs parallel to the coastline. Arrange the components vertically from <strong>Top to Bottom</strong>, keeping yourself directly upwind of the ILCA's side hull.",
         layout: "vertical",
-        windLabel: "💨 Wind (▲ Up)",
+        windLabel: "Wind▲",
         correctOrder: ['ilca', 'sailor', 'wind']
     }
 ];
